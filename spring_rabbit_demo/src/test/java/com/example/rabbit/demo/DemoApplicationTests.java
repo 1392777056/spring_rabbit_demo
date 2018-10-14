@@ -29,4 +29,12 @@ public class DemoApplicationTests {
 		rabbitTemplate.convertAndSend("mao","要发送的信息");
 	}
 
+	/**
+	 * 分列模式，在mao和yang队列中发送消息 ---- 使用了交换器（exchange）
+	 */
+	@Test
+	public void testFanoutModelQueue() {
+		rabbitTemplate.convertAndSend("zhangexchange","","你好啊");
+	}
+
 }
